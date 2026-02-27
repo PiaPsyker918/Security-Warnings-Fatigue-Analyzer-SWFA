@@ -4,6 +4,7 @@
 Security Warnings Fatigue Analyzer (SWFA) is a stochastic simulation framework that models user attention decay, recovery dynamics, and probabilistic reactions to repeated security alerts.
 The project explores how repeated exposure to warnings affects decision quality, error probability, and long-term cognitive stability.
 
+`This is beta version of README. I will rewrite it in the future.`
 
 ## Motivation
 
