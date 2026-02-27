@@ -1,0 +1,63 @@
+
+This is a older versions of model
+    
+    
+    #def react_to_alert(self, alert: Alert) -> tuple[Reaction, float]:
+    #    severity = float(alert.severity)
+
+    #    self._fatigue(severity)
+
+    #    probs = self._reaction_probabilities(severity)
+
+    #    probs = np.array(probs, dtype=float)
+    #    #s = probs.sum()
+    #    #if s == 0 or not np.isfinite(s):
+    #    #    probs = np.array([0.0, 1.0, 0.0])
+    #    #else:
+    #    #    probs = probs / s
+    #    probs = self._reaction_probabilities(severity)
+
+    #    actions = [Reaction.READ, Reaction.IGNORE, Reaction.ERROR]
+
+    #    r = self.rng.random()
+    #    cum = np.cumsum(probs)
+    #    idx = int(np.searchsorted(cum, r, side="right"))
+    #    # clamp index just in case
+    #    idx = max(0, min(idx, len(actions) - 1))
+    #    action = actions[idx]
+
+    #    self._post_action_update(action)
+
+    #    return action, self.state.attention
+
+    #def _reaction_probabilities(self, severity: float) -> np.ndarray:
+    #    a = self.state.attention
+
+    #    u_read = 1.0 * a
+    #    u_ignore = 1.0 * (1 - a)
+    #    u_error = self.error_factor * (1 - a) * severity
+
+    #    #u_read = severity * (0.5 + a)
+    #    #u_ignore = (1 - a)
+    #    #u_error = self.error_factor * (1 - a) * severity
+
+    #    #logits = np.array([u_read, u_ignore, u_error], dtype=float)
+    #    #logits = np.array([u_read, u_ignore, u_error])
+    #    probs = User.softmax(np.array([u_read, u_ignore, u_error]))
+    #    return probs
+
+    #    #return User.softmax(logits)
+
+    #    #p_read  = severity * (0.4 + 0.6 * a)
+    #    #p_error = self.error_factor * (1 - a) * severity
+    #    #p_ignore = 1 - p_read - p_error
+    #    #probs = np.array([p_read, p_ignore, p_error])
+
+    #    #probs = np.clip(probs, 0, 1)
+    #    #probs /= probs.sum()
+
+    #    #return probs
+
+
+    # default: u_error = self.error_factor * severity * (1 - a)
+    # variant 1: u_error = self.error_factor * severity**2 * (1 - a)
